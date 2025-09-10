@@ -3,14 +3,25 @@
 namespace App\Livewire;
 
 use App\Models\BirdCount;
+use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class BirdCounter extends Component
 {
+    // this validation  means to validate the variable
+    // #[Validate('require|integer')]
     public int $counts;
+
+    // #[Validate('require|string')]
     public string $birds;
 
     public function create () {
+        // validation for this method only
+        $this->validate([
+            'counts' => 'required|integer',
+            'birds' => 'required|string'
+        ]);
+
         BirdCount::create([
             'bird' => $this->birds,
             'count' => $this->counts
@@ -21,9 +32,9 @@ class BirdCounter extends Component
     }
 
     // use to initialize data just like "class __constructor"
-    public function mount () {
-        return;
-    }
+    // public function mount ($counts) {
+    //     return $this->counts =$counts;
+    // }
 
     public function findById ($id) {
         return BirdCount::findOrFail($id);
