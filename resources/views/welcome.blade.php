@@ -21,6 +21,6 @@
     </head>
     <body>
         {{-- sample component with livewire --}}
-        <livewire:sample-component />
+        <livewire:counter />
     </body>
 </html>
