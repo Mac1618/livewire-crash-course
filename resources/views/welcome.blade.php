@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>Livewire</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -20,7 +20,12 @@
         @endif
     </head>
     <body>
-        {{-- sample component with livewire --}}
-        <livewire:counter />
+        {{-- 
+            sample component with livewire 
+        --}}
+        <livewire:bird-counter 
+            :counts="3" {{-- initial value for the component --}}
+        />
+
     </body>
 </html>
