@@ -19,10 +19,12 @@
     </form>
 
     {{-- map from db --}}
-    <ul>
-        @foreach ($datas as $data)
-            <li>{{$data->bird}}</li>
-        @endforeach
-    </ul>
-    
+        <ul>
+            @foreach ($datas as $data)
+                <li class="space-y-3" wire:key='{{ $data->id }}' wire:transition>
+                    <span>{{$data->bird}}</span>
+                    <button wire:click='delete({{ $data }})' class="text-red-500 border-red-500 hover:bg-red-100 px-2 py-1 border rounded">delete</button>
+                </li>
+            @endforeach
+        </ul>
 </div>

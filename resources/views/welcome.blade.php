@@ -12,7 +12,9 @@
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
-        {{-- <livewire:bird-counter :counts="3" /> --}}
+        <livewire:bird-counter :counts="3" />
+
+        <hr class="my-5">
 
         {{-- communicate 2 components --}}
         <div class="p-4 ">
@@ -21,6 +23,10 @@
         <div class="p-4 ">
             <span>Recieve Event: <livewire:recieve-event /></span>
         </div>
-        
+
+        <hr class="my-5">
+
+        {{-- lazy loading component --}}
+        <livewire:lazy-loading-component lazy />
     </body>
 </html>

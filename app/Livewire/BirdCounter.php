@@ -49,17 +49,14 @@ class BirdCounter extends Component
         ]);
     }
 
-    public function delete ($id) {
-        $delete = $this->findById($id);
-
-        return $delete->delete();
+    public function delete (BirdCount $birdCount) {
+        return $birdCount->delete();
     }
-
 
     public function render()
     {
         return view('livewire.bird-counter', [
-            'datas' => BirdCount::all()
+            'datas' => BirdCount::latest()->get()
         ]);
     }
 }
