@@ -2,10 +2,12 @@
 
 namespace App\Livewire;
 
+use Livewire\Attributes\Lazy;
 use Livewire\Component;
 
 use function Termwind\render;
 
+// #[Lazy]  // identifier to use Lazy Loading
 class LazyLoadingComponent extends Component
 {
     // same as "__constructor"
