@@ -12,12 +12,15 @@
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
-        {{-- 
-            sample component with livewire 
-        --}}
-        <livewire:bird-counter 
-            {{-- :counts="3" initial value for the component --}}
-        />
+        {{-- <livewire:bird-counter :counts="3" /> --}}
 
+        {{-- communicate 2 components --}}
+        <div class="p-4 ">
+            <span>Send Event: <livewire:send-event /></span>
+        </div>
+        <div class="p-4 ">
+            <span>Recieve Event: <livewire:recieve-event /></span>
+        </div>
+        
     </body>
 </html>
